@@ -1,4 +1,6 @@
+from xml.parsers.expat import model
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -189,12 +191,36 @@ def run_lower_model():
     #train model
     model.fit(X, Y)
 
+    pre = model.named_steps["preprocess"]
+    clf = model.named_steps["model"]
+
+    feature_names = pre.get_feature_names_out()
+
+    # get coefficients
+    coefs = clf.coef_[0]
+
+    # build dataframe of key features
+    feature_importance = pd.DataFrame({
+        "feature": feature_names,
+        "coefficient": coefs,
+        "abs_coefficient": np.abs(coefs)
+    }).sort_values("abs_coefficient", ascending=False)
+
+    # view top features
+    print(feature_importance.head(20))
+
     #write probability to dataframe
     model_df["fail_risk"] = (model.predict_proba(X)[:, 1] * 100).round(2)
 
     #write to csv
     model_df.to_csv(OUT_PATH, index=False)
     print(model_df)
+
+    print("Most likely student to fail:")
+    print(model_df.loc[model_df["fail_risk"].idxmax()])
+
+    print("Most likely student to fail:")
+    print(model_df.loc[model_df["fail_risk"].idxmax()])
 
 #run_higher_model()
 run_lower_model()
