@@ -60,11 +60,15 @@ def clean_higher():
     #remove empty fields
     higher_ed_df = higher_ed_df.dropna().copy()
 
+
     #replace spaces with underscores
     higher_ed_df.columns = higher_ed_df.columns.str.replace(" ", "_")
     
     #every header to lowercase
     higher_ed_df.columns = higher_ed_df.columns.str.lower()
+
+    #remove enrolled students
+    higher_ed_df = higher_ed_df[higher_ed_df["target"] != "Enrolled"]
 
     #save to file with proper separator
     higher_ed_df.to_csv(HIGHER_ED_PROC, sep=",", index=False)

@@ -221,5 +221,5 @@ def run_lower_model():
     print("Most likely student to fail:")
     print(model_df.loc[model_df["fail_risk"].idxmax()])
 
-#run_higher_model()
-run_lower_model()
+run_higher_model()
+#run_lower_model()
