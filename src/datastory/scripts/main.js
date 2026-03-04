@@ -1,6 +1,7 @@
 'use strict';
 
 // Loads higher education data into array format
+// DO NOT REMOVE OR RENAME ANY VARIABLES WITHOUT ASKING
 let higherEd = await d3.csv("data/higher_ed_scored.csv", (d) => {
     return {
         marriage_status: d.marital_status,
@@ -31,6 +32,7 @@ let higherEd = await d3.csv("data/higher_ed_scored.csv", (d) => {
 console.log(higherEd);
 
 // Loads secondary education data into array format
+// DO NOT REMOVE OR RENAME ANY VARIABLES WITHOUT ASKING
 let lowerEd = await d3.csv("data/lower_ed_scored.csv", (d) => {
     return {
         gender: d.sex,
