@@ -2,10 +2,10 @@ import pandas as pd
 import maps
 
 #config vars
-HIGHER_ED_RAW = '../../data/raw/higher_ed.csv'
-LOWER_ED_RAW = '../../data/raw/lower_ed.csv'
-HIGHER_ED_PROC =  '../../data/processed/higher_ed.csv'
-LOWER_ED_PROC = '../../data/processed/lower_ed.csv'
+HIGHER_ED_RAW = '../data/raw/higher_ed.csv'
+LOWER_ED_RAW = '../data/raw/lower_ed.csv'
+HIGHER_ED_PROC =  '../data/processed/higher_ed.csv'
+LOWER_ED_PROC = '../data/processed/lower_ed.csv'
 
 #Fucntion to clean and preprocess the higher education dataset
 def clean_higher():

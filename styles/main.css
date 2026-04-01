@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap");
+
+/* ALL CSS FOR OUR DATA STORY WILL GO HERE. DO NOT CREATE EXTRA CSS FILES */
+
+:root {
+	--serif: "PT Serif", Georgia, "Times New Roman", serif;
+	--sans: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+	--platinum: #E7ECEF;
+	--dusk-blue: #274C77;
+	--steel-blue: #6096BA;
+	--icy-blue: #A3CEF1;
+	--cool-steel: #879CB3;
+}
+
+/*MAIN STYLING*/
+
+body {
+	margin: 0;
+	font-family: var(--sans);
+	line-height: 1.6;
+	background: var(--platinum);
+	color: var(--dusk-blue);
+}
+
+.header {
+	background: var(--dusk-blue);
+	color: var(--platinum);
+	padding: 2.5rem 1.25rem;
+	text-align: center;
+}
+
+.header h1 {
+	font-family: var(--serif);
+	margin: 0;
+}
+
+.header h4 {
+	margin: 0.5rem 0 0;
+	font-weight: 500;
+}
+
+.header p {
+	max-width: 70ch;
+	margin: 0.75rem auto 0;
+}
+
+li {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+body > div:nth-of-type(2) {
+	max-width: 960px;
+	margin: 1.5rem auto;
+	padding: 0 1rem;
+	display: grid;
+	gap: 1rem;
+}
+
+.chart_wrapper {
+	background: #ffffff;
+	border: 4px solid var(--steel-blue);
+	border-radius: 6px;
+	padding: 1rem 1.25rem;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	box-sizing: border-box;
+    box-shadow: 4px 4px 4px 4px #d7dbdf;
+}
+
+.chart_wrapper h2 {
+	font-family: var(--serif);
+	margin: 0 0 0.35rem;
+}
+
+.chart_wrapper p {
+	margin: 0.5rem 0;
+}
+
+.footer {
+	max-width: 960px;
+	margin: 2rem auto 1rem;
+	padding: 0 1rem 1.5rem;
+}
+
+.footer h3 {
+	font-family: var(--serif);
+	margin: 1.25rem 0 0.5rem;
+}
+
+.footer p {
+	margin: 0.25rem 0;
+}
+
+a {
+	color: var(--steel-blue);
+}
+
+a:hover {
+	color: var(--dusk-blue);
+}
+
+hr {
+    width: 50rem;
+    color: var(--cool-steel);
+}
+
+.authors {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem 1.25rem;
+margin: 0.25rem 0 0;
+}
+
+.down_arrow {
+    font-size: 8rem;
+    margin: -4rem -1rem -3rem -1rem;
+    text-align: center;
+}
+
+.NB {
+    font-size: 10px;
+    color: var(--cool-steel);
+}
+
+/*SCATTER PLOT STYLING*/
+
+.brushable_scatter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.25rem;
+}
+
+.rate_heatmap_row {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 2rem;
+	justify-content: center;
+	width: 100%;
+	margin-top: 2rem;
+}
+
+#scat1 {
+	width: 100%;
+	max-width: 928px;
+	min-width: 0;
+}
+
+.rate_wrapper {
+	width: fit-content;
+	margin: 10 10 10 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+}
+
+#scat1 svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.scatter_rate {
+	width: 100%;
+	min-width: 160px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.scatter_rate .rate-value {
+	color: var(--dusk-blue);
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 1;
+	margin: 0;
+}
+
+.scatter_rate .rate-label {
+	color: var(--cool-steel);
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0.35rem 0 0;
+}
+
+.gen_heatmap {
+    color: var(--platinum);
+    background-color: var(--steel-blue);
+    border: none;
+    border-radius: 0.5rem;
+    width: 8rem;
+    height: 2rem;
+    font-size: 12px;
+    box-shadow: 2px 2px var(--icy-blue);
+}
+
+.gen_heatmap:hover {
+    background-color: var(--platinum);
+    color: var(--dusk-blue);
+}
+
+.gen_heatmap:active { 
+    box-shadow: none;
+}
+
+/*HEATMAP STYLING*/
+
+.heatmap1 {
+
+}
+
+/* Hierarchial Bar Chart Style */
+
+.chart-app-container {
+    max-width: 900px; 
+    margin: 1rem auto; 
+}
+
+.chart-controls-bar {
+    padding: 10px 15px; 
+    border-radius: 6px 6px 0 0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    transition: background 0.3s ease; 
+}
+
+.chart-tabs {
+    display: flex; 
+    gap: 8px;
+}
+
+.tab-btn {
+    background: transparent; 
+    border: none; 
+    padding: 6px 16px; 
+    border-radius: 4px; 
+    font-weight: 600; 
+    font-family: var(--sans);
+    cursor: pointer; 
+    color: rgba(255, 255, 255, 0.6); 
+    font-size: 14px; 
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active-tab {
+    background: rgba(255, 255, 255, 0.2); 
+    color: #ffffff;
+}
+
+.btn-back-img {
+    cursor: pointer; 
+    height: 24px; 
+    width: auto;
+    filter: brightness(0) invert(1); 
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.btn-back-img:hover {
+    opacity: 1;
+}
+
+.chart-render-area {
+    border: 1px solid var(--platinum); 
+    border-top: none; 
+    padding: 20px;
+    border-radius: 0 0 6px 6px;
+}
+
+.bar {
+    transition: fill 0.4s ease, opacity 0.2s ease;
+}
+
+.bar-mother {
+    fill: var(--steel-blue);
+}
+
+.bar-father {
+    fill: var(--dusk-blue);
+}
+
+.bar[style*="cursor: pointer"]:hover {
+    opacity: 0.8;
+}

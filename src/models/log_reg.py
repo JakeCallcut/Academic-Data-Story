@@ -8,8 +8,8 @@ from sklearn.linear_model import LogisticRegression
 
 def run_higher_model():
     #config vars
-    MOD_TABLE_PATH = '../../data/processed/higher_ed.csv'
-    OUT_PATH = '../../data/results/higher_ed_scored.csv'
+    MOD_TABLE_PATH = '../data/processed/higher_ed.csv'
+    OUT_PATH = '../data/results/higher_ed_scored.csv'
 
     #create modelling table dataframe
     model_df = pd.read_csv(MOD_TABLE_PATH)
@@ -141,8 +141,8 @@ def run_higher_model():
 
 def run_lower_model():
     #config vars
-    MOD_TABLE_PATH = '../../data/processed/lower_ed.csv'
-    OUT_PATH = '../../data/results/lower_ed_scored.csv'
+    MOD_TABLE_PATH = '../data/processed/lower_ed.csv'
+    OUT_PATH = '../data/results/lower_ed_scored.csv'
 
     #create modelling table dataframe
     model_df = pd.read_csv(MOD_TABLE_PATH)

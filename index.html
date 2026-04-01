@@ -1,0 +1,144 @@
+<!-- MAIN HTML FILE. TRY TO AVOID CREATING EXTRA HTML FILES UNLESS IT IS TO A BRAND NEW BRANCH-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Data Story</title>
+    
+    <!-- loading D3.js library -->
+    <script src="libs/d3/d3.v7.min.js"></script>
+    
+    <!-- loading styles -->
+     <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Social Mobility Academic Data Story</h1>
+        <h4>F20DV Group 1 </h2>
+        <p>An investigation on data surrounding academic performance of portugese students attending secondary school and university.</p>
+    </div>
+
+    <div>
+        <div class="chart_wrapper">
+            <h2>Hierarchal Barchart</h2>
+            <p>This chart presents the educational and occupational conditions of the parents of the university students in the dataset.</p>
+
+            <div class="hierarchal_bar">
+            <div id="app-container" class="chart-app-container">
+                <div id="chart-controls" class="chart-controls-bar">
+                    <div class="chart-tabs">
+                        <button id="btn-mother" class="tab-btn active-tab">Mother</button>
+                        <button id="btn-father" class="tab-btn">Father</button>
+                    </div>
+                    <img id="btn-back" src="img/return.png" alt="Go Back" class="btn-back-img" title="Return to Previous Level" style="display: none;">
+                </div>
+                <div id="chart-container" class="chart-render-area"></div>
+            </div>                
+            </div>
+            <h3>Notable Insights</h3>
+            <li>
+                From this chart we can see several interesting insights, 
+                firstly that the categories of employment for both mothers and 
+                fathers of students is largely representative of the country's larger economy. That is, 
+                mothers tend to occupy administrative jobs and intellectual specialists
+                whereas fathers tend to occupy jobs in machine operation and construction.
+            </li>
+            <li>
+                Similarly, given the categories present, parental occupation seems to have
+                little bearing on the academic success of a student. This is with the exception of when
+                either the mother or father have the occupation of 'student', this appears to be associated with a higher proportion 
+                of students who dropped out. From pure conjecture, perhaps this is due to the financial difficulties associated with younger parents or parents in education
+                having less time to dedicate to children.
+            </li>
+            <li>
+                Overall, this chart offers an exploration into the composition of educational and occupational
+                characteristics of parents of students in the dataset. It would seem that this has little bearing on
+                students' academic performance.
+            </li>
+        </div>
+        <p class="down_arrow">↓</p>
+        <div class="chart_wrapper">
+            <h2>Brushable Scatterplot & Heatmap</h2>
+            <p>This chart displays the correlation between the admission grade, and the curricular performance of the university students in the dataset.</p>
+
+            <div class="brushable_scatter">
+                <div id="scat1"></div>
+                <div class="rate_heatmap_row">
+                    <div class="rate_wrapper">
+                        <div id="scat1_rate" class="scatter_rate">
+                            <p class="rate-value">0%</p>
+                            <p class="rate-label">Dropped out overall</p>
+                        </div>
+                        <button class="gen_heatmap">Generate Heatmap</button>
+                    </div>
+                    <div class="heatmap1"></div>
+                </div>
+            </div>
+            <h3>Notable Insights</h3>
+            <li>
+                Exploring this chart reveals several interesting insights, the main insight can be found by selecting the lower portion of the chart,
+                where the dropout rate is around 35-40%, then sliding the window upwards reveals that the dropout rate falls to
+                around 13-18%. This reveals that the students curricular performance in their 1st semester has a moderate to high impact on dropout proportion.
+            </li>
+            <li>
+                On the other axis, by selecting the left-hand side of the chart, we observe a dropout rate of around 30%, while the right-hand side bears 
+                a rate of roughly 25%. This is a notable insight since it indicates that the students admission grade (before beginning their course) is not nearly as 
+                impactful as their performance during their studies.
+            </li>
+            <li>
+                Overall, there are far more entries for women in the dataset than men, so the heatmap is somewhat skewed. However,
+                in terms of proportion, a lot more men drop out than women: (22% of women, 43% of men).
+            </li>
+            <p class="NB">N.B. We have removed several entries with a curricular grade of 0 (presumably students who did not attend) to ensure the chart is more perceptible.</p>
+        </div>
+        <p class="down_arrow">↓</p>
+        <div class="chart_wrapper">
+            <h2>Stacked Pie Chart</h2>
+            <p>This chart breaks down the free time, study time, and travel time, of the secondary school students in the dataset.</p>
+
+            <div class="Sunburst"></div>
+
+            <h3>Notable Insights</h3>
+            <li>
+                By inspecting just the innermost pie we can see that there is actually a slight increase in dropout rate associated with increased free-time. this is very interesting since perhaps the students feel as if they have a lot of free time when in actuality they are not dedicating this time to their studies. On the other hand, when inspecting the second pie as we are changing the innermost one: we can see that students who said they have the most free time were far more likely to say they spend the most time studying, and actually this combination (high free-time, high study-time) yields a very high dropout rate of nearly 57%.
+            </li>
+            <li>
+                Overall, when inspecting all pies simultaneously, we can see that the majority class for travel time is 1 meaning most students must lively in close proximity to the school. whereas, in the other fields, the classes seem to be more balanced with people much more likely to answer 3 and 4 for free-time, and 2 and 3 for study-time. perhaps this offers more insight into how students perceive their time.
+            </li>
+            <li>
+                Overall, by selecting multiple pies in various combinations we can see that, other than when the student counts are extremely low, there is little difference (around +or- 5%), This suggests to us that perhaps academic performance hinges less on your perception of your own time, but what you acheive in the time you are given.
+            </li>
+        </div>
+        <p class="down_arrow">↓</p>
+        <div class="chart_wrapper">
+            <h2>Conclusions</h2>
+            <p>
+                We hope that this data story has given you a clearer sense of how socio-economic factors shape student performance. The datasets and visualisations presented here consistently show how background circumstances, from gender to parental education, carry measurable weight in determining academic outcomes.
+                While the global picture canot be captured in one dataset, the evidence does show is that student performance is not simply a product of individual effort or ability. The conditions in which young people learn and live are important.
+            </p>
+        </div>
+    </div>
+        
+    <hr>
+
+    <footer class="footer">
+        <h3>Dataset Attributions</h3>
+        <li>V. Realinho, M. Vieira Martins, J. Machado, and L. Baptista. "Predict Students' Dropout and Academic Success," <i>UCI Machine Learning Repository</i>, 2021. [Online]. Available: <a href="https://doi.org/10.24432/C5MC89">https://doi.org/10.24432/C5MC89</a>.</li>
+        <li>P. Cortez. "Student Performance," <i>Machine Learning Repository</i>, 2008. [Online]. Available: <a href="https://doi.org/10.24432/C5TG7T">https://doi.org/10.24432/C5TG7T</a>.</li>
+        <p>All datasets are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.</p>
+        <h3>Technical Attributions</h3>
+        <li><a href="https://d3js.org">https://d3js.org</a></li>
+        <li><a href="https://observablehq.com/@d3/gallery">https://observablehq.com/@d3/gallery</a></li>
+        <li>F20DV Lab Sheets 1, 2, 3, & 4 - Pierre Le Bras</li>
+        <h3>Authors</h3>
+        <p class="authors"> <span>Jake Callcut</span> <span>Arman Miah</span> <span>Grant Paterson</span> <span>Alex Ursoi</span> </p>
+    </footer>
+
+     <!-- loading main.js script 
+     CALL THIS LAST!! 
+     To make sure elements you reference exist when you try to access them -->
+    <script type="module" src="scripts/main.js"></script>
+    
+</body>
+</html>
